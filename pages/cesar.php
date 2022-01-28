@@ -97,11 +97,11 @@ if(isset($_POST['decrypte']))
             <form action="" method="post">
                 <div class="mb-3 ">
                     <label for="exampleInputEmail1" class="form-label">la clé de déchiffrement</label>
-                    <input type="number" name="deckey" class="form-control shadow-sm bg-body rounded" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $_POST['deckey'];?>" required>
+                    <input type="number" name="deckey" class="form-control shadow-sm bg-body rounded" id="deckey" aria-describedby="emailHelp" value="<?php echo $_POST['deckey'];?>" required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Text a deCrypter </label>
-                    <textarea name="texttodec" id="" cols="30" rows="5" class="form-control shadow-sm bg-body rounded" id="exampleInputPassword1" value="<?php echo $_POST['texttodec']; ?>" required></textarea>
+                    <textarea name="texttodec" id="" cols="30" rows="5" class="form-control shadow-sm bg-body rounded" id="decktext" value="<?php echo $_POST['texttodec']; ?>" required></textarea>
                 </div>
                 <div class="d-grid gap-2 shadow-sm bg-body rounded">
                     <button type="submit" name="decrypte" class="btn btn-primary">deCrypter</button>
