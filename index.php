@@ -3,8 +3,8 @@
     <h1 class="mt-4 text-dark text-center">PROJET DE CTYPTOGRAPHIE</h1>
     <div class="card mt-4 shadow-lg p-3 mb-5 bg-body rounded">
         <div class="card-body">
-           <p>Ce projet est réaliser par Hakkou Mouataz, pour le module du Cryptographie</p> 
-            <p>Nom Et Prènom : Mouataz Hakkou</p>
+           <p>Ce projet est réaliser par Hakkou Mouataz et Nasri Zakaria, pour le module du Cryptographie</p> 
+            <p>Nom Et Prènom : Mouataz Hakkou , Nasri Zakaria</p>
             <p>école : SupMTI</p>
             <p>Niveau : 4eme Année </p>
 
@@ -26,23 +26,12 @@
 
     <div class="card mb-4">
         <div class="card-header">
-        Substitution par multiplication
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-
-    <div class="card mb-4">
-        <div class="card-header">
         Substitution affine
         </div>
         <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="btn btn-primary">Tester ici</a>
         </div>
     </div>
 
@@ -53,18 +42,7 @@
         <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-
-    <div class="card mb-4">
-        <div class="card-header">
-        la méthode de Vigenère
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="btn btn-primary">Tester ici</a>
         </div>
     </div>
 
