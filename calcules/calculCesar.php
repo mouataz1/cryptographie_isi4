@@ -1,4 +1,5 @@
 <?php
+//chifrement
 
 function encrypt($text, $s)
 {
@@ -13,10 +14,15 @@ function encrypt($text, $s)
     return $result;
 }
 
-//$text = "ATTACKATONCE";
-//$s = 4;
-/*echo "Text : " . $text;
-echo "\nShift: " . $s;
-echo "\nCipher: " . encrypt($text, $s);*/
+
+//dechifrement
+function decrypt($text, $s)
+{
+    
+    $resdec = encrypt($text, 26 - $s);
+    return $resdec;
+}
+
+
 
 ?>

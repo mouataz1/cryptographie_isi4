@@ -4,17 +4,51 @@
 require '../calcules/calculCesar.php';
  
 $key = 0;
-$textToCrypt = "";
-if(isset($_POST['encrypte']) && !empty($_POST['enckey']) && !empty($_POST['texttoenc'])){
-    $enckey = $_POST['enckey'];
-    $textToEnc = $_POST['texttoenc'];
+$textToCrypt ;
+$texToDecrypt;
+$resdeck;
+$resdeck ;
 
-    $res =  encrypt($textToEnc, $enckey);
+if(isset($_POST['encrypte'])){
+    if(!empty($_POST['enckey']) && !empty($_POST['texttoenc']))
+    {
+        $enckey = $_POST['enckey'];
+        $textToEnc = $_POST['texttoenc'];
+
+        $res =  encrypt($textToEnc, $enckey);
+    }
     
+    
+}else if(empty($_POST['enckey']) && empty($_POST['texttoenc']))
+{
+    $res = "";
+    $_POST['enckey'] = 0;
+    $_POST['texttoenc'] = "";
+
 }else{
     echo '<div class="alert alert-danger" role="alert">
     la clé et le message ne doit pas etre vide !
   </div>';
+}
+
+if(isset($_POST['decrypte']))
+{
+    if(isset($_POST['deckey']) && isset($_POST['texttodec'])){
+       $deckey = $_POST['deckey'];
+    $textTodeck = $_POST['texttodec'];
+    $resdeck = decrypt($textTodeck, $deckey); 
+    }else if(empty($_POST['deckey']) && empty($_POST['texttodec']))
+    {
+        $resdeck = "";
+        $_POST['deckey'] = 0;
+        $_POST['texttodec'] = "";
+    
+    }else{
+        echo '<div class="alert alert-danger" role="alert">
+        la clé et le message ne doit pas etre vide !
+      </div>';
+    }
+    
 }
 
 
@@ -29,7 +63,7 @@ if(isset($_POST['encrypte']) && !empty($_POST['enckey']) && !empty($_POST['textt
             <form action="" method="post">
                 <div class="mb-3 ">
                     <label for="exampleInputEmail1" class="form-label">la clé de chiffrement</label>
-                    <input type="number" name="enckey" class="form-control shadow-sm bg-body rounded" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $_POST['enckey'];?>" required>
+                    <input type="number" name="enckey" class="form-control shadow-sm bg-body rounded" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php  echo $_POST['enckey'];?>" required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Text a Crypter </label>
@@ -63,14 +97,14 @@ if(isset($_POST['encrypte']) && !empty($_POST['enckey']) && !empty($_POST['textt
             <form action="" method="post">
                 <div class="mb-3 ">
                     <label for="exampleInputEmail1" class="form-label">la clé de déchiffrement</label>
-                    <input type="number" name="enckey" class="form-control shadow-sm bg-body rounded" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $_POST['enckey'];?>" required>
+                    <input type="number" name="deckey" class="form-control shadow-sm bg-body rounded" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $_POST['deckey'];?>" required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Text a deCrypter </label>
-                    <textarea name="texttoenc" id="" cols="30" rows="5" class="form-control shadow-sm bg-body rounded" id="exampleInputPassword1" value="<?php echo $_POST['texttoenc']; ?>" required></textarea>
+                    <textarea name="texttodec" id="" cols="30" rows="5" class="form-control shadow-sm bg-body rounded" id="exampleInputPassword1" value="<?php echo $_POST['texttodec']; ?>" required></textarea>
                 </div>
                 <div class="d-grid gap-2 shadow-sm bg-body rounded">
-                    <button type="submit" name="encrypte" class="btn btn-primary">deCrypter</button>
+                    <button type="submit" name="decrypte" class="btn btn-primary">deCrypter</button>
                 </div>
             </form>
         </div>
@@ -81,7 +115,7 @@ if(isset($_POST['encrypte']) && !empty($_POST['enckey']) && !empty($_POST['textt
             </div>
             <div class="mb-3 border border-warning shadow-sm bg-body rounded" style="height: 30vh;">
             <p class=" p-2">
-                <?php echo $res; ?>
+                <?php echo $resdeck; ?>
             </p>
 
             </div>
